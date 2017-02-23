@@ -80,7 +80,7 @@ Dupa ce a vazut Gigel ce treaba buna ai facut s-a gandit sa foloseasca scriptul 
 
 `20X -> [200, 201, ... ,209]`
 
-Exemplu rulare: `./log_stats --start=22:02/2017:18:46:16 --end=23/02/2017:14:26:56 --success=20X,401,3X0`
+Exemplu rulare: `./log_stats --start=22:02/2017:18:46 --end=23/02/2017:14:26 --success=20X,401,3X0`
 
 ## Testare si punctare
 
