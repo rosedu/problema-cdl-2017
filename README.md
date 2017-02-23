@@ -70,7 +70,7 @@ Aveti de implementat in **orice** limbaj de programare un program care sa preluc
 
 Numarul de minute dintr-un interval va fi transmis ca parametru in linia de comanda, ca de exemplu: `./log_stats --interval 2`. Parametrul poate lipsi, considerandu-se ca valoare implicita `1`.
 
-Inceputul si sfarsitul unui interval vor fi de asemenea transmisi in linia de comanda: `./log_stats --start 2017-02-22T18:45 --end 2017-02-22T18:46`. **Atentie!** Parametrii `--start` si `--end` pot aparea si separati, reprezentand doar un capat al intervalului. De asemenea, intervalul include atat minutul de start, cat si pe cel de end (daca sunt definite).
+Inceputul si sfarsitul unui interval vor fi de asemenea transmisi in linia de comanda: `./log_stats --start 2017-02-22T18:45 --end 2017-02-22T18:48`. **Atentie!** Parametrii `--start` si `--end` pot aparea si separati, reprezentand doar un capat al intervalului, celalalt fiind considerat cel mai vechi/nou log. Parametrii --start/--end au formatul $dataT$ora:$minut.
 
 Parametrii din linia de comanda pot aparea in orice ordine.
 
