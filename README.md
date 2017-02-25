@@ -2,33 +2,33 @@
 
 Gigel si-a deschis site de vandut masini virtuale la mana a doua si vrea sa vada cand e cel mai accesat. Pentru asta el se uita la log-urile server-ului apache. El observa ca in perioade de trafic mai intens apar si erori de accesare si vrea sa verifice rata de succes in acele perioade, pentru a-si face o idee in ce cazuri merge mai rau si ce fel de optimizari ar fi necesare.
 
-Gigel, din pacate, nu are mult timp la dispozitie deoarece are de pregatit temele care vor fi vandute. Din acest motiv Gigel te-a rugat sa il ajuti prin realizarea unei statistici pentru o perioada de trafic intens, stabilind cate requesturi au avut succes, ordonate dupa data si endpoint.
+Gigel, din pacate, nu are mult timp la dispozitie deoarece are de pregatit masinile virtuale care vor fi vandute. Din acest motiv Gigel te-a rugat sa il ajuti prin realizarea unei statistici pentru o perioada de trafic intens, stabilind cate requesturi au avut succes, ordonate dupa data si endpoint.
 
 ## Format log-uri
 
 Acesta e un exemplu de log preluat de la un server Apache. Partile importante sunt:
 
 * timestamp-ul `[22/Feb/2017:18:45:02 +0000]`
-* endpoint-ul `/uso.html`
+* endpoint-ul `/ubuntu.html`
 * status code (urmeaza imediat dupa sectiunea de endpoint) `503`
     
 
 Formatul log-urilor lui Gigel este descris mai pe larg [aici](https://httpd.apache.org/docs/1.3/logs.html).
 
-    10.10.10.10 - - [22/Feb/2017:18:45:02 +0000] "GET /so.html?user=gheorghe HTTP/1.1" 401 533 "-" "python-requests/2.12.4"
-    10.10.10.10 - - [22/Feb/2017:18:45:13 +0000] "GET /uso.html HTTP/1.1" 200 1303 "-" "python-requests/2.12.4"
-    10.10.10.10 - - [22/Feb/2017:18:45:24 +0000] "GET /poo.html#enunt HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
-    10.10.10.10 - - [22/Feb/2017:18:45:34 +0000] "GET /uso.html HTTP/1.1" 200 1303 "-" "python-requests/2.12.4"
-    192.168.100.25 - - [22/Feb/2017:18:45:45 +0000] "GET /so.html?user=dorel HTTP/1.1" 401 1160 "-" "python-requests/2.12.4"
-    192.168.100.25 - - [22/Feb/2017:18:45:49 +0000] "GET /so.html?user=gigel HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
-    192.168.100.25 - - [22/Feb/2017:18:45:55 +0000] "GET /poo.html#pret HTTP/1.1" 503 1160 "-" "python-requests/2.12.4"
-    192.168.100.25 - - [22/Feb/2017:18:46:06 +0000] "GET /poo.html HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
-    192.168.100.25 - - [22/Feb/2017:18:46:16 +0000] "GET /so.html?user=dorel HTTP/1.1" 401 533 "-" "python-requests/2.12.4"
-    1.2.3.4 - - [22/Feb/2017:18:46:27 +0000] "GET /so.html HTTP/1.1" 404 533 "-" "python-requests/2.12.4"
-    1.2.3.4 - - [22/Feb/2017:18:46:37 +0000] "GET /so.html HTTP/1.1" 404 533 "-" "python-requests/2.12.4"
-    1.2.3.4 - - [22/Feb/2017:18:46:48 +0000] "GET /poo.html HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
+    10.10.10.10 - - [22/Feb/2017:18:45:02 +0000] "GET /fedora.html?user=gheorghe HTTP/1.1" 401 533 "-" "python-requests/2.12.4"
+    10.10.10.10 - - [22/Feb/2017:18:45:13 +0000] "GET /ubuntu.html HTTP/1.1" 200 1303 "-" "python-requests/2.12.4"
+    10.10.10.10 - - [22/Feb/2017:18:45:24 +0000] "GET /centos.html#enunt HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
+    10.10.10.10 - - [22/Feb/2017:18:45:34 +0000] "GET /ubuntu.html HTTP/1.1" 200 1303 "-" "python-requests/2.12.4"
+    192.168.100.25 - - [22/Feb/2017:18:45:45 +0000] "GET /fedora.html?user=dorel HTTP/1.1" 401 1160 "-" "python-requests/2.12.4"
+    192.168.100.25 - - [22/Feb/2017:18:45:49 +0000] "GET /fedora.html?user=gigel HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
+    192.168.100.25 - - [22/Feb/2017:18:45:55 +0000] "GET /centos.html#pret HTTP/1.1" 503 1160 "-" "python-requests/2.12.4"
+    192.168.100.25 - - [22/Feb/2017:18:46:06 +0000] "GET /centos.html HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
+    192.168.100.25 - - [22/Feb/2017:18:46:16 +0000] "GET /fedora.html?user=dorel HTTP/1.1" 401 533 "-" "python-requests/2.12.4"
+    1.2.3.4 - - [22/Feb/2017:18:46:27 +0000] "GET /fedora.html HTTP/1.1" 404 533 "-" "python-requests/2.12.4"
+    1.2.3.4 - - [22/Feb/2017:18:46:37 +0000] "GET /fedora.html HTTP/1.1" 404 533 "-" "python-requests/2.12.4"
+    1.2.3.4 - - [22/Feb/2017:18:46:48 +0000] "GET /centos.html HTTP/1.1" 200 1160 "-" "python-requests/2.12.4"
 
-**Atentie!** Pentru randul `192.168.100.25 - - [22/Feb/2017:18:46:16 +0000] "GET /so.html?user=dorel HTTP/1.1" 401 533 "-" "python-requests/2.12.4"`, endpoint-ul este doar  `/so.html`. Se ignora parametrii de query si ancorele din URL (adica partile de dupa `?` sau `#`).
+**Atentie!** Pentru randul `192.168.100.25 - - [22/Feb/2017:18:46:16 +0000] "GET /fedora.html?user=dorel HTTP/1.1" 401 533 "-" "python-requests/2.12.4"`, endpoint-ul este doar  `/fedora.html`. Se ignora parametrii de query si ancorele din URL (adica partile de dupa `?` sau `#`).
 
 Intrarile din log-uri vor fi ordonate cronologic.
 
@@ -45,18 +45,18 @@ Rezultatele vor fi sortate mai intai dupa timestamp si apoi lexicografic dupa en
 
 Un exemplu de output pentru log-ul de mai sus, in care durata intervalului este setata la 1 minut:
 
-    2017-02-22T18:45 1 /poo.html 50.0
-    2017-02-22T18:45 1 /so.html 33.33
-    2017-02-22T18:45 1 /uso.html 100.0
-    2017-02-22T18:46 1 /poo.html 100.0
-    2017-02-22T18:46 1 /so.html 0.0
+    2017-02-22T18:45 1 /centos.html 50.0
+    2017-02-22T18:45 1 /fedora.html 33.33
+    2017-02-22T18:45 1 /ubuntu.html 100.0
+    2017-02-22T18:46 1 /centos.html 100.0
+    2017-02-22T18:46 1 /fedora.html 0.0
 
 
 Sau cu durata intervalului setata la 2 minute:
 
-    2017-02-22T18:45 2 /poo.html 75.0
-    2017-02-22T18:45 2 /so.html 16.67
-    2017-02-22T18:45 2 /uso.html 100.0
+    2017-02-22T18:45 2 /centos.html 75.0
+    2017-02-22T18:45 2 /fedora.html 16.67
+    2017-02-22T18:45 2 /ubuntu.html 100.0
 
 **Atentie!** Un request primit la `18:45:59` nu va fi considerat in acelasi minut cu un alt request primit la `18:46:00`, desi diferenta de timp dintre cele doua evenimente este mai mica de 60 de secunde. Va fi luat in considerare doar minutul din timestamp-ul unui request.
 
