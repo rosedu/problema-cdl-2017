@@ -74,6 +74,9 @@ Inceputul si sfarsitul unui interval vor fi de asemenea transmisi in linia de co
 
 Parametrii din linia de comanda pot aparea in orice ordine.
 
+
+**Puteti sa va folositi de biblioteci existente pentru a implementa diferite parti din functionalitate (de exemplu, prelucrarea datelor calendaristice si a diferentelor intre ele). Nu aveti in schimb voie sa folositi un parser de log-uri deja implementat.**
+
 ## Bonus
 
 Dupa ce a vazut Gigel ce treaba buna ai facut s-a gandit sa foloseasca scriptul tau pentru a depana anumite probleme ce tin de logica aplicatiei. Prin urmare s-a gandit sa extinda programul initial cu optiunea de a primi ca argumente o lista de coduri HTTP, pe care le considera succes, restul fiind failure. De asemenea in lista de parametrii, pot aparea si numere de forma `20X`, unde `X` reprezinta posibilitatea oricarui digit `(0-9)`.
