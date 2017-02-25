@@ -1,6 +1,6 @@
 ## Apache log parser
 
-Gigel si-a deschis site de vandut teme si vrea sa vada cand e cel mai accesat. Pentru asta el se uita la log-urile server-ului apache. El observa ca in perioade de trafic mai intens apar si erori de accesare si vrea sa verifice rata de succes in acele perioade, pentru a-si face o idee in ce cazuri merge mai rau si ce fel de optimizari ar fi necesare.
+Gigel si-a deschis site de vandut masini virtuale la mana a doua si vrea sa vada cand e cel mai accesat. Pentru asta el se uita la log-urile server-ului apache. El observa ca in perioade de trafic mai intens apar si erori de accesare si vrea sa verifice rata de succes in acele perioade, pentru a-si face o idee in ce cazuri merge mai rau si ce fel de optimizari ar fi necesare.
 
 Gigel, din pacate, nu are mult timp la dispozitie deoarece are de pregatit temele care vor fi vandute. Din acest motiv Gigel te-a rugat sa il ajuti prin realizarea unei statistici pentru o perioada de trafic intens, stabilind cate requesturi au avut succes, ordonate dupa data si endpoint.
 
