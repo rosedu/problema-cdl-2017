@@ -1,3 +1,5 @@
+#UPDATE: Au fost publicate testele
+
 ## Apache log parser
 
 Gigel si-a deschis site de vandut masini virtuale la mana a doua si vrea sa vada cand e cel mai accesat. Pentru asta el se uita la log-urile server-ului apache. El observa ca in perioade de trafic mai intens apar si erori de accesare si vrea sa verifice rata de succes in acele perioade, pentru a-si face o idee in ce cazuri merge mai rau si ce fel de optimizari ar fi necesare.
@@ -33,6 +35,8 @@ Formatul log-urilor lui Gigel este descris mai pe larg [aici](https://httpd.apac
 Intrarile din log-uri vor fi ordonate cronologic.
 
 ## Format statistici
+
+###UPDATE: intervalele de statistici nu sunt neaparat continue unul dupa altul. Daca intr-un interval de X minute nu a fost niciun entry pentru un anumit endpoint, atunci acesta nu va aparea in statistici, iar urmatorul interval va incepe de la cel mai apropiat entry.
 
 Gigel va cere de fapt sa calculati rata de succes per endpoint per numar de minute prestabilit (de exemplu per un minut). Componentele unui rand de output sunt:
 
@@ -85,8 +89,14 @@ Dupa ce a vazut Gigel ce treaba buna ai facut s-a gandit sa foloseasca scriptul 
 
 Exemplu rulare: `./log_stats --start 2017-02-22T18:45 --end 2017-02-22T18:48 --success 20X,401,3X0`
 
-## Testare si punctare
+## Testare
+
+Testarea va fi efectuata cu checker-ul din repository (fisierul `checker.py`). Acesta se asteapta sa gaseasca in directorul curent alte doua directoare, `tests` si `reference`. Checker-ul va genera output-urile voastre in directorul `output` si diferentele dintre output si referinta in directorul `diff`.
+
+Pentru a rula checker-ul aveti nevoie de `python3`. Un exemplu de rulare in Linux: `python3 checker.py`.
+
+Daca aveti nelamuriri in legatura cu checker-ul, cu testele sau considerati ca exista greseli in output-ul de referinta, creati un issue nou si va vom raspunde acolo.
+
+## Punctare
 
 TODO: Stay tuned!
-
-
