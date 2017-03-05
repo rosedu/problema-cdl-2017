@@ -38,6 +38,8 @@ Intrarile din log-uri vor fi ordonate cronologic.
 
 ###UPDATE: intervalele de statistici nu sunt neaparat continue unul dupa altul. Daca intr-un interval de X minute nu a fost niciun entry pentru un anumit endpoint, atunci acesta nu va aparea in statistici, iar urmatorul interval va incepe de la cel mai apropiat entry.
 
+###UPDATE2: intervalele sunt determinate pentru fiecare endpoint in parte.
+
 Gigel va cere de fapt sa calculati rata de succes per endpoint per numar de minute prestabilit (de exemplu per un minut). Componentele unui rand de output sunt:
 
 * data, in format `%an-%luna-%ziT%ora:%minut`. T-ul de la mijloc are doar rol de separator.
