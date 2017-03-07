@@ -51,7 +51,7 @@ for test in tests:
                        .replace('log', 'out'))
 
     with open(out_file, 'w') as f:
-        call(['gtimeout', '30', executable_name] + list(test),
+        call(['timeout', '30', executable_name] + list(test),
              stdout=f)
 
     ref_file = (test[0].replace('tests', 'reference')
