@@ -1,3 +1,5 @@
+#UPDATE: A fost lansat checker-ul pe vmchecker. Puteti sa va submiteti solutiile acolo pentru notare.
+
 #UPDATE: Au fost publicate testele
 
 ## Apache log parser
@@ -101,4 +103,4 @@ Daca aveti nelamuriri in legatura cu checker-ul, cu testele sau considerati ca e
 
 ## Punctare
 
-TODO: Stay tuned!
+Solutiile voastre trebuie submise pe vmchecker [la acest link](https://vmchecker.cs.pub.ro/ui/#CDL). Pe platforma veti primi nota si eventual feedback pe baza codului.
