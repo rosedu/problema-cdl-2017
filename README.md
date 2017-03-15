@@ -1,3 +1,4 @@
+#Nu uitati de uitati sa completati [formularul de inscriere](https://docs.google.com/forms/d/e/1FAIpQLSejjNZjNdyGQGj4IrsfLOY1vuCXT_9Ki_08ahntiakWTJsJ3A/viewform?c=0&w=1)!
 #UPDATE: A fost lansat checker-ul pe vmchecker. Puteti sa va submiteti solutiile acolo pentru notare.
 
 #UPDATE: Au fost publicate testele
